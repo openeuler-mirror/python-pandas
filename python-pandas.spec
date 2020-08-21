@@ -3,7 +3,7 @@
 
 Name:           python-%{pypi_name}
 Version:        0.25.3
-Release:        1
+Release:        2
 Summary:        Data structures and data analysis tools for Python
 License:        BSD
 URL:            https://pandas.pydata.org/
@@ -51,5 +51,8 @@ py.test-%{python3_version}
 %{python3_sitearch}/%{pypi_name}-*.egg-info/
 
 %changelog
+* Fri Aug 21 2020 shixuantong <shixuantong@huawei.com> - 0.25.3-2
+- add release version for rebuild
+
 * Wed Nov 6 2019 shanshishi <shanshishi@huawei.com> - 0.25.3-1
 - Init package
