@@ -2,14 +2,14 @@
 %bcond_with test
 
 Name:           python-%{pypi_name}
-Version:        0.25.3
+Version:        1.3.2
 Release:        1
 Summary:        Data structures and data analysis tools for Python
 License:        BSD
 URL:            https://pandas.pydata.org/
 Source0:        https://github.com/pandas-dev/pandas/releases/download/v%{version}/%{pypi_name}-%{version}.tar.gz
 
-BuildRequires:  gcc gcc-c++ gdb-headless
+BuildRequires:  gcc gcc-c++ python3-Cython python3-cffi
 BuildRequires:  python3-devel python3-setuptools python3-numpy
 %if %{with test}
 BuildRequires:  python3-pytest >= 4.0.2
@@ -25,7 +25,7 @@ and data analysis tools for the Python programming language.
 %package -n     python3-%{pypi_name}
 Summary:        %{summary}
 %{?python_provide:%python_provide python3-%{pypi_name}}
-Requires: python3-numpy python3-dateutil python3-pytz
+Requires: python3-numpy python3-dateutil python3-pytz python3-hypothesis python3-pytest-xdist
 
 
 %description -n python3-%{pypi_name} %{_description}
@@ -51,5 +51,8 @@ py.test-%{python3_version}
 %{python3_sitearch}/%{pypi_name}-*.egg-info/
 
 %changelog
+* Wed Aug 25 2021 wulei <wulei80@huawei.com> - 1.3.2-1
+- update to 1.3.2
+
 * Wed Nov 6 2019 shanshishi <shanshishi@huawei.com> - 0.25.3-1
 - Init package
